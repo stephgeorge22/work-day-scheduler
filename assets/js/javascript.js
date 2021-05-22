@@ -29,3 +29,27 @@ function checkTime() {
 };
 
 checkTime();
+
+// create form field 
+
+// create save button linked to form field 
+
+// create save function 
+    //when save button is clicked, input is stored in local storage
+$(document).ready(function () {
+        
+    $('#saveBtn').click(function () {
+        // val inputVal = get value from input taskfield
+        $('#taskField').each(function() {
+            var inputVal = $(this).val();
+        });
+
+        //local storage
+        localStorage.setItem("input", inputVal);
+
+        //display local storage
+        var inputField = localStorage.getItem("input");
+        
+        document.getElementById("taskField").innerHTML = inputField;
+    });
+});
