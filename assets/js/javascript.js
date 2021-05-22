@@ -30,26 +30,32 @@ function checkTime() {
 
 checkTime();
 
-// create form field 
 
-// create save button linked to form field 
 
-// create save function 
-    //when save button is clicked, input is stored in local storage
 $(document).ready(function () {
-        
-    $('#saveBtn').click(function () {
-        // val inputVal = get value from input taskfield
-        $('#taskField').each(function() {
-            var inputVal = $(this).val();
-        });
 
-        //local storage
-        localStorage.setItem("input", inputVal);
+    $('.taskField').each(function() {
+        var hour = $(this).parent().attr('value');
 
-        //display local storage
-        var inputField = localStorage.getItem("input");
+        var inputField = localStorage.getItem(hour);
+        $(".taskField[name="+hour+"]").val(inputField);
+    });
+
+    $('.saveBtn').click(function () {
+        //this == button
+        var buttonVal = $(this).attr('name');
+
+        // val buttonvval = this.id
+        var fieldInput = $(".taskField[name ="+buttonVal+"]").val();
+
+        localStorage.setItem(buttonVal, fieldInput)
+
+
+        // val buttonval
+        // $(fieldval[val=buttonval].val
+        //save
         
-        document.getElementById("taskField").innerHTML = inputField;
     });
 });
+//page loads, all saved text inputs are shown
+// all entered text inputs are set when save is clicked 
