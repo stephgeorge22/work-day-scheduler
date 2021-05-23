@@ -30,10 +30,9 @@ function checkTime() {
 
 checkTime();
 
-
-
 $(document).ready(function () {
 
+    // page loads, all saved text inputs are shown
     $('.taskField').each(function() {
         var hour = $(this).parent().attr('value');
 
@@ -48,14 +47,8 @@ $(document).ready(function () {
         // val buttonvval = this.id
         var fieldInput = $(".taskField[name ="+buttonVal+"]").val();
 
-        localStorage.setItem(buttonVal, fieldInput)
-
-
-        // val buttonval
-        // $(fieldval[val=buttonval].val
-        //save
+        // store inputs
+        localStorage.setItem(buttonVal, fieldInput);
         
     });
 });
-//page loads, all saved text inputs are shown
-// all entered text inputs are set when save is clicked 
