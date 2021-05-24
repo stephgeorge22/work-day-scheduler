@@ -14,16 +14,16 @@ function checkTime() {
 
         // if hour < present hour then gray 
         if (colorCode < nowTime) {
-            $(".task[value = "+colorCode+"]").css({'background-color':'gray'});
+            $(".task[value = "+colorCode+"]").css({'background-color':'gray', 'color': 'white'});
         }
 
         // if hour = present hour then red
         else if (colorCode === nowTime) {
-            $(".task[value = "+colorCode+"]").css({'background-color':'red'});
+            $(".task[value = "+colorCode+"]").css({'background-color':'#ff6961', 'color': 'white'});
         }
         // if hour > present then green 
         else {
-            $(".task[value = "+colorCode+"]").css({'background-color':'green'});
+            $(".task[value = "+colorCode+"]").css({'background-color':'#77dd77', 'color': 'white'});
         }
     });
 };
